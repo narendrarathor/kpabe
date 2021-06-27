@@ -17,7 +17,7 @@ import com.openshift.service.FileService;
 public class HomeController {
 	@Autowired
     private FileService service;
-	@RequestMapping("/")
+	@RequestMapping("/file")
 	public String viewHomePage(Model model) {
 	    List<FileModel> listFiles = service.listAll();
 	    model.addAttribute("listFiles", listFiles);
@@ -36,7 +36,7 @@ public class HomeController {
 	public String saveProduct(@ModelAttribute("file") FileModel file) {
 	    service.save(file);
 	   
-	    return "redirect:/";
+	    return "redirect:/file";
 	}
 	
 	@RequestMapping("/edit/{id}")
@@ -51,7 +51,7 @@ public class HomeController {
 	@RequestMapping("/delete/{id}")
 	public String deleteProduct(@PathVariable(name = "id") int id) {
 	    service.delete(id);
-	    return "redirect:/";       
+	    return "redirect:/file";       
 	}
 	
 }
