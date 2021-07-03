@@ -9,5 +9,6 @@ public class KpabeApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(KpabeApplication.class, args);
 	}
+	
 
 }

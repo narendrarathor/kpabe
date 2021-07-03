@@ -10,12 +10,16 @@
         <h1>Create New File</h1>
         <br />
         <form action="#" th:action="@{/save}" th:object="${file}"
-            method="post">
+            method="post" enctype="multipart/form-data">
  
             <table border="0" cellpadding="10">
-                <tr>
+               <!--  <tr>
                     <td>File Name:</td>
                     <td><input type="text" th:field="*{name}" /></td>
+                </tr> --> 
+                <tr>
+                    <td>select File</td>
+                    <td><input type="file" name="file" /></td>
                 </tr>                         
                 <tr>
                     <td colspan="2"><button type="submit">Save</button> </td>
