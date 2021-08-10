@@ -58,10 +58,11 @@ public class FileService {
 			SimpleDateFormat ft = new SimpleDateFormat(
 					" dd-MM-yyyy, hh:mm");
 			String date = ft.format(dNow).toString();
-			kpabe.encrption(file.getBytes());
-			kpabetime=System.nanoTime()-kpabetime;
 			mkpabe.encrption(file.getBytes());
 			modifiedkpabetime=System.nanoTime()-modifiedkpabetime;
+			kpabe.encrption(file.getBytes());
+			kpabetime=System.nanoTime()-kpabetime;
+			
             // Check if the file's name contains invalid characters
             if(fileName.contains("..")) {
                 throw new FileStorageException("Sorry! Filename contains invalid path sequence " + fileName);
